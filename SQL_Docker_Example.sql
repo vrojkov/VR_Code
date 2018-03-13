@@ -34,3 +34,19 @@ GO
 
 select * from tbl_test01
 GO
+
+xp_fixeddrives
+select * from sys.database_files
+go
+
+CREATE DATABASE Test_DB02  
+ON   
+( NAME = test_dat, FILENAME = '/var/opt/mssql/data/test_db02.mdf',  
+    SIZE = 5MB, MAXSIZE = 50, FILEGROWTH = 5 )  
+LOG ON  
+( NAME = test_log, FILENAME = '/var/opt/mssql/data/test_db02_log.ldf',  
+    SIZE = 2MB, MAXSIZE = 10MB, FILEGROWTH = 5MB ) ;  
+
+GO
+drop database Test_DB02
+GO
