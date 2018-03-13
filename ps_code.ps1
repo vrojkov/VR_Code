@@ -1,0 +1,1 @@
+Get-OdbcDsn -DriverName "SQL Server*"
