@@ -5,3 +5,8 @@ EXEC master.dbo.xp_regread
     'ObjectName', 
     @sn OUTPUT;
 SELECT @sn;
+
+
+use AdventureWorks2014
+GO
+SELECT * from AdventureWorks2014.dbo.DatabaseLog

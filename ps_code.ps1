@@ -1,1 +1,2 @@
-Get-OdbcDsn -DriverName "SQL Server*"
+Get-OdbcDriver
+$PSVersionTable

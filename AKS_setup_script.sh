@@ -15,20 +15,20 @@ openssl.exe rsa -pubout -in VRAksPrivateKey.key -out VRAksPublicKey.key
 az provider register -n Microsoft.ContainerService
 
 3. Creat enew RG
-az group create --name VRAksRG01 --location eastus
+az group create --name vr_aks-rg01 --location eastus
 
 4. Vreate new AKS cluster
-az aks create --resource-group VRAksRG01 --name VRAKSCluster01 --node-count 1 --generate-ssh-keys
+az aks create --resource-group vr_aks-rg01 --name vr-aks-vr-aks-vr-aks-cluster01 --node-count 1 --generate-ssh-keys
 
 If failed then :
 Check if SSH careated
 ls ~/.ssh/ 
 Try to recreate cluster with existing key:
-az aks create -n VRAKSCluster01 -g VRAksRG01 --ssh-key-value ~/.ssh/id_rsa.pub
+az aks create -n vr-aks-cluster01 -g vr_aks-rg01 --ssh-key-value ~/.ssh/id_rsa.pub
 
 
 5.  configure kubectl to connect to your Kubernetes cluster, run the following command. This step downloads credentials and configures the Kubernetes CLI to use them.
-az aks get-credentials --resource-group VRAksRG01 --name VRAKSCluster01
+az aks get-credentials --resource-group vr_aks-rg01 --name vr-aks-cluster01
 
 
 
@@ -42,4 +42,4 @@ Check cluster version:
 az aks get-versions -l <LOCATION>
 
 Upgarecluster to new version
-az aks upgrade -n VRAKSCluster01 -g VRAksRG01  -k 1.8.2  # --debug
+az aks upgrade -n vr-aks-cluster01 -g vr_aks-rg01  -k 1.8.2  # --debug
