@@ -61,4 +61,10 @@ docker push  vrojkov/mssql-server-linux_testdb_01:2017-Test_DB_01
 #-- Pull image from GitHub
 docker pull vrojkov/mssql-server-linux_testdb_01:2017-Test_DB_01
 
-#-- Change
+#-- Copy files to and from docker
+#-- From docker to Win container with Virtual box into folder /C/Users/n1203739a/TMP/
+ docker cp sql_VR_Test_DB_01:/install/Docker_TEST_DB01.bak ./TMP
+#-- To Docker from to Win container with Virtual box
+docker cp ./TMP/Docker_TEST_DB01_V2.bak sql_VR_Test_DB_01:/install/
+
+
