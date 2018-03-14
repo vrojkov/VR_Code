@@ -12,6 +12,10 @@ Your new favorite “TV”  channel is https://channel9.msdn.com:
 SQL 2017 in Docker Containers for your CI/CD process:
 https://channel9.msdn.com/Events/Connect/2017/T152?ocid=player
 
+This includes azure AKS kuebrnetes and topic on persistent storage
+https://azure.microsoft.com/en-us/resources/videos/connect-2017-use-sql-server-2017-in-docker-containers-for-your-ci-cd-process/
+
+
 A lap around SQL Operations Studio, a new cross-platform SQL Server tool:
  https://channel9.msdn.com/Events/Connect/2017/T255
 
