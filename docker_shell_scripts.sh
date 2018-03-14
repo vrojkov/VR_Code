@@ -45,6 +45,13 @@ docker ps -a
 sudo docker run -p 4433:1433 --name sql_VR_Test_DB_01 \
    -d vrojkov/mssql-server-linux_testdb_01:2017-Test_DB_01
 
+sudo docker start sql_VR_Test_DB_01
+Sleep 15
+
+#-- lookl inside the Docker. To find where db fileslocated Run via SQL OpSt: select * from sys.database_files   
+docker exec -it sql_VR_Test_DB_01 /bin/bash
+ls /var/opt/mssql/data/ -l
+
 
 #-- Push new image to DockerHub repo. Using username and pwd. Altrantivelly can use your e-mail in the command string instead of pwd 
 docker login --username=vrojkov
