@@ -1,0 +1,43 @@
+Booking 15A for a SQL on Linux, Docker containers, VS Code technology stack  presentation during our  DBA team weekly meeting.
+
+You are welcome to get some information about the technology ahead of the meeting: 
+If you will go through all materials below – then you can skip my presentation 
+
+
+SQL on Docker – quick start
+https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker
+
+Your new favorite “TV”  channel is https://channel9.msdn.com:
+
+SQL 2017 in Docker Containers for your CI/CD process:
+https://channel9.msdn.com/Events/Connect/2017/T152?ocid=player
+
+A lap around SQL Operations Studio, a new cross-platform SQL Server tool:
+ https://channel9.msdn.com/Events/Connect/2017/T255
+
+Docker Containers - General information including Docker Hub:
+https://www.docker.com/what-container - you can skip this general container info and go to the next link , which is Docker info:
+
+https://docs.docker.com/get-started/#docker-concepts
+
+
+Extra links about SQL and Dockers on Azure. Also Kubernetes, Configuring persistent database data for containers, Run multiple SQL Docker on Swarm
+
+Using Azure Container Service with Docker:
+https://azure.microsoft.com/en-gb/resources/videos/using-azure-container-service-with-docker/
+
+
+Migrate SQL DB to Docker:
+https://docs.microsoft.com/en-us/sql/linux/tutorial-restore-backup-in-sql-server-container
+
+Configure SQL Server 2017 container images on Docker
+https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-docker
+
+Azure Container Service (AKS). Simplify the deployment, management, and operations of Kubernetes:
+About: https://azure.microsoft.com/en-us/services/container-service/
+Tutorial: https://docs.microsoft.com/en-us/azure/aks/
+
+Configure a SQL Server container in Kubernetes for high availability:
+https://docs.microsoft.com/en-us/sql/linux/tutorial-sql-server-containers-kubernetes
+
+
