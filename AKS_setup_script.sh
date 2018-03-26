@@ -18,7 +18,7 @@ az provider register -n Microsoft.ContainerService
 az group create --name vr-aks-rg01 --location eastus
 
 4. Vreate new AKS cluster
-az aks create --resource-group vr-aks-rg01 --name vr-aks-cluster01 --node-count 1 --generate-ssh-keys
+az aks create --resource-group vr-aks-rg01 --name vr-aks-cluster01 --kubernetes-version 1.8.7 --node-count 1 --generate-ssh-keys
 
 If failed then :
 Check if SSH careated
