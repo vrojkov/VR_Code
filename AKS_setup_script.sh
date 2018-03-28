@@ -17,7 +17,7 @@ az provider register -n Microsoft.ContainerService
 3. Creat enew RG
 az group create --name vr-aks-rg01 --location eastus
 
-4. Vreate new AKS cluster
+4. Create new AKS cluster
 az aks create --resource-group vr-aks-rg01 --name vr-aks-cluster01 --kubernetes-version 1.8.7 --node-count 1 --generate-ssh-keys
 
 If failed then :
@@ -43,3 +43,7 @@ az aks get-versions -l <LOCATION>
 
 Upgarecluster to new version
 az aks upgrade -n vr-aks-cluster01 -vr-aks-rg01  -k 1.8.2  # --debug
+
+
+99. Delete AKS cluster
+az group delete --name vr-aks-rg01
