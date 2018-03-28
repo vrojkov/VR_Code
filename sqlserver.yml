@@ -18,7 +18,7 @@ spec:
         - containerPort: 1433
         env:
         - name: SA_PASSWORD
-          value: "HarfordSteam1!"
+          value: "test5lq0nAks@"
         - name: ACCEPT_EULA
           value: "Y"
 ---
