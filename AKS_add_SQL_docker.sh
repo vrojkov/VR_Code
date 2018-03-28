@@ -40,7 +40,26 @@ kubectl get pods
 kubectl get deployments
 #-- Check the sql service
 kubectl get service
-#-- iff all looks good use ExternalIP for SQL service to connect from any SQL vm or app in azure or public network. : 
+#-- if all looks good use ExternalIP for SQL service to connect from any SQL vm or app in azure or public network. : 
+# for example use Iot Dev SQL vm and use my sql login to connect
 
 
+#------------------------------------
+kubectl get pods
+#-- Delete pod and see if AKS willtry to recover SQL service on a new pod
+kubectl delete pod mssql-deployment-0
+kubectl get pods
 
+#-- The better way to configure DR SQL in AKS is to provision persistent storage. 
+#-- How to create persistent storage and use it with SQL container in aks:
+#-- https://docs.microsoft.com/en-us/sql/linux/tutorial-sql-server-containers-kubernetes
+#--
+#-- Also look at how to store secured PWD in AKS
+
+
+#------------------------------------
+#--  Cleanup
+#------------------------------------
+
+kubectl delete deployment --namespace=kube-system --all
+kubectl get deployment --namespace=kube-system
