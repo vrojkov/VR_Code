@@ -18,17 +18,17 @@ az provider register -n Microsoft.ContainerService
 az group create --name vr-aks-rg01 --location eastus
 
 4. Create new AKS cluster
-az aks create --resource-group vr-aks-rg01 --name vr-aks-cluster01 --kubernetes-version 1.8.7 --node-count 1 --generate-ssh-keys
+az aks create --name vr-aks-cluster01 --resource-group vr-aks-rg01 --kubernetes-version 1.8.7 --node-count 1 --generate-ssh-keys --no-wait
 
 If failed then :
 Check if SSH careated
 ls ~/.ssh/ 
 Try to recreate cluster with existing key:
-az aks create -n vr-aks-cluster01 -g vr-aks-rg01aks-rg01 --ssh-key-value ~/.ssh/id_rsa.pub
+az aks create --name vr-aks-cluster01 --resource-group vr-aks-rg01 --kubernetes-version 1.8.7 --node-count 1 --ssh-key-value ~/.ssh/id_rsa.pub --no-wait
 
 
 5.  configure kubectl to connect to your Kubernetes cluster, run the following command. This step downloads credentials and configures the Kubernetes CLI to use them.
-az aks get-credentials --resource-group vr-aks-rg01 --name vr-aks-cluster01
+az aks get-credentials --name vr-aks-cluster01 --resource-group vr-aks-rg01
 
 
 
@@ -42,8 +42,19 @@ Check cluster version:
 az aks get-versions -l <LOCATION>
 
 Upgarecluster to new version
-az aks upgrade -n vr-aks-cluster01 -vr-aks-rg01  -k 1.8.2  # --debug
+az aks upgrade -n vr-aks-cluster01 -g vr-aks-rg01  -k 1.8.2  # --debug
 
+
+50. Scale AKS cluster
+az aks scale  --name vr-aks-cluster01 --resource-group vr-aks-rg01 --node-count 3
+az aks scale  --name vr-aks-cluster01 --resource-group vr-aks-rg01 --node-count 1
+
+
+60. Upgrade AKS cluster
+60.1 Show available AKS versions
+az aks get-upgrades --name vr-aks-cluster01 --resource-group vr-aks-rg01 --output table
+60.2 Upgarade cluster to ver 1.8.7 ( based on list from 60.1 )
+az aks upgrade --name vr-aks-cluster01 --resource-group vr-aks-rg01  --kubernetes-version 1.8.7
 
 99. Delete AKS cluster
-az group delete --name vr-aks-rg01
+az group delete --name vr-aks-rg01 --no-wait --yes 

@@ -21,6 +21,8 @@ spec:
           value: "test5lq0nAks@"
         - name: ACCEPT_EULA
           value: "Y"
+        - name: MSSQL_PID
+          value: "Developer"
 ---
 apiVersion: v1
 kind: Service

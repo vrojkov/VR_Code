@@ -13,7 +13,7 @@ sudo docker run -e 'ACCEPT_EULA=Y' -e ‘MSSQL_SA_PASSWORD=MyH..S..1!' -p 1401:1
 Get running dockers:
 Sudo docker ps -a
 
-
+select * from sys.database
 --------------------------*/
 create DATABASE TEST_DB01
 go
