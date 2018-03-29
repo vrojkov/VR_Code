@@ -58,8 +58,16 @@ kubectl get pods
 
 
 #------------------------------------
-#--  Cleanup
+#--  Cleanup ???? not tested
 #------------------------------------
 
 kubectl delete deployment --namespace=kube-system --all
 kubectl get deployment --namespace=kube-system
+
+kubectl delete nodes --all
+kubectl get nodes 
+
+#-- Nuke option - delete whole AKS or even  RG
+az aks delete --resource-group vr-aks-rg01 --name vr-aks-cluster01
+az group delete --name vr-aks-rg01 
+

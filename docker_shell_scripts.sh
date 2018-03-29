@@ -8,7 +8,21 @@ docker ps -a
 #Sql Docker start when image doesn't exists - i.e. create new container with name sql_VR_1:
 sudo docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=HarfordSteam1!' \
    -p 4433:1433 --name sql_VR_1 \
-   -d microsoft/mssql-server-linux:2017-latest
+   -d microsoft/mssql-server-linux:2017-latest \
+   -e 'MSSQL_PID=Developer' 
+   
+
+#>------------  Enabled parameters to start SQL 
+MSSQL_PID       Default=Developer,  Available: Express,Standard,Enterprise,EnterpriseCore 
+
+MSSQL_TCP_PORT
+MSSQL_IP_ADDRESS
+MSSQL_BACKUP_DIR
+MSSQL_DATA_DIR
+MSSQL_LOG_DIR
+MSSQL_DUMP_DIR
+MSSQL_ENABLE_HADR
+<#
 
  #If image exists but container is not running -> Start it:
  #Stop container
