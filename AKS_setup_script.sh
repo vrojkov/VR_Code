@@ -57,4 +57,5 @@ az aks get-upgrades --name vr-aks-cluster01 --resource-group vr-aks-rg01 --outpu
 az aks upgrade --name vr-aks-cluster01 --resource-group vr-aks-rg01  --kubernetes-version 1.8.7
 
 99. Delete AKS cluster
-az group delete --name vr-aks-rg01 --no-wait --yes 
+# az group delete --name vr-aks-rg01 --no-wait --yes 
+az aks delete  --name vr-aks-cluster01 --resource-group vr-aks-rg01 --no-wait --yes

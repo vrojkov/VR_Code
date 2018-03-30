@@ -33,9 +33,14 @@ nano sqlserver.yml
 #-- !!! Time to create SQL -------
 kubectl create -f sqlserver.yml
 
+#-- Apply some changes later: kubectl apply -f FILENAME
+kubectl apply -f sqlserver.yml
+
 #--  check if all components created and running
 #-- verify that container created
 kubectl get pods
+#Verify if SQl is running by accessing it's startup log. Check Prot #.
+kubectl logs sqlserver1234_from_pod
 #-- check deployments
 kubectl get deployments
 #-- Check the sql service
@@ -44,6 +49,9 @@ kubectl get service
 # for example use Iot Dev SQL vm and use my sql login to connect
 
 
+#-- Gracefully stop resources like pods, services 
+# kubectl stop pods,services -l name=myLabel
+# UGH Deprecated -- kubectl stop services -l name=sqlserver-servces
 #------------------------------------
 kubectl get pods
 #-- Delete pod and see if AKS willtry to recover SQL service on a new pod
@@ -61,6 +69,11 @@ kubectl get pods
 #--  Cleanup ???? not tested
 #------------------------------------
 
+kubectl delete deployment sqlserver
+kubectl get service
+kubectl delete service sqlserver-service
+
+ 
 kubectl delete deployment --namespace=kube-system --all
 kubectl get deployment --namespace=kube-system
 
@@ -68,6 +81,9 @@ kubectl delete nodes --all
 kubectl get nodes 
 
 #-- Nuke option - delete whole AKS or even  RG
+#az group delete --name vr-aks-rg01 
+
+#-- Delete AKS cluster
 az aks delete --resource-group vr-aks-rg01 --name vr-aks-cluster01
-az group delete --name vr-aks-rg01 
+
 

@@ -32,7 +32,7 @@ spec:
   ports:
   - name: sqlserver
     port: 1433
-    targetPort: 1433
+    targetPort: 1866
   selector:
     name: sqlserver
   type: LoadBalancer
