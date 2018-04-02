@@ -1,0 +1,38 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: sqlserver
+  labels:
+    app: sqlserver
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: sqlserver
+    spec:
+      containers:
+      - name: sqlserver1
+        image: vrojkov/mssql-server-linux_testdb_01:2017-Test_DB_01
+        ports:
+        - containerPort: 1433
+        env:
+        - name: SA_PASSWORD
+          value: "test5lq0nAks@"
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: MSSQL_PID
+          value: "Developer"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sqlserver-service
+spec:
+  ports:
+  - name: sqlserver
+    port: 1866
+    targetPort: 1433
+  selector:
+    name: sqlserver
+  type: LoadBalancer
