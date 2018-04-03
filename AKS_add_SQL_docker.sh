@@ -35,6 +35,7 @@ kubectl create -f sqlserver.yml
 
 #-- Apply some changes later: kubectl apply -f FILENAME
 kubectl apply -f sqlserver.yml
+kubectl apply -f sqlserver1866LB.yml
 
 #--  check if all components created and running
 #-- verify that container created
@@ -66,7 +67,7 @@ kubectl get pods
 
 
 #------------------------------------
-#--  Cleanup ???? not tested
+#--  Cleanup 
 #------------------------------------
 
 kubectl delete deployment sqlserver
@@ -74,6 +75,9 @@ kubectl get service
 kubectl delete service sqlserver-service
 
  
+#------------------------------------
+#--  Cleanup Nuke option
+#------------------------------------
 kubectl delete deployment --namespace=kube-system --all
 kubectl get deployment --namespace=kube-system
 
